@@ -1,4 +1,5 @@
 
+
 function TaskItem({ task, onUpdate, onDelete}) {
   const getStatusColor = (status) => {
     switch (status) {
@@ -16,9 +17,10 @@ function TaskItem({ task, onUpdate, onDelete}) {
     <div className={`flex items-center justify-between p-4 border-b border-gray-200 ${getStatusColor(task.status)}`}>   
       <div className="flex items-center space-x-4">
        <div className="flex-1">
-        <h4>{task.text}</h4>
-        {/* Usuario
-        FechaCreacion */}
+
+        <p>{task.id}</p>
+        <p>{task.text}</p>
+       
         
       </div> 
        <select name="" id="" 
@@ -31,12 +33,11 @@ function TaskItem({ task, onUpdate, onDelete}) {
         <option value="not-started">Sin iniciar</option>
        </select>
 
-       <button
-       onClick={() => onDelete(task.id)} 
-       className="bg-red-500 text-white p-2 rounded hover:bg-red-600 transition duration-200"
-       >
-        Eliminar
-       </button>
+       <button 
+        onClick={() => onDelete(task.id)}
+        class="btn btn-danger rounded">
+            Eliminar
+        </button>
       </div>
     </div>
   );

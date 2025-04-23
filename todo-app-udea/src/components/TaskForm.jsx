@@ -1,4 +1,5 @@
 import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TaskForm({ onAddTask }) {
 
@@ -16,15 +17,18 @@ function TaskForm({ onAddTask }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}
+    className="flex items-center justify-between p-4 border-b border-gray-200 m-2">
       <input 
         type="text"
         value={newTask}
         placeholder="Agrega una nueva tarea"
         onChange={(e) => setNewTask(e.target.value)}
+        className="flex-1 p-2 border rounded me-2"
       />
       <button
-        type="submit">
+        type="submit"
+        className="bg-primary text-white p-2 rounded me-2 hover:bg-blue-600 transition duration-200">
         Agrega Tarea
       </button>
     </form>
